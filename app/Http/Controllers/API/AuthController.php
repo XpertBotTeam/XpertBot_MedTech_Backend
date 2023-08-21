@@ -13,10 +13,10 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only(['email', 'password']);
-
+ 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            $access_token = $user()->createToken('authtoken')->plainTextToken;
+            $access_token = $user->createToken('authToken')->plainTextToken;
 
             return response()->json([
                 'success' => true,
@@ -25,7 +25,7 @@ class AuthController extends Controller
             ]);
         } else {
             return response()->json([
-                'success' => false,
+                'success' => false, 
                 'message' => 'Wrong username or password'
             ]);
         }
@@ -43,7 +43,7 @@ class AuthController extends Controller
             $user->password = bcrypt($request->password);
             $user->save();
 
-            $token = $user->createToken('authtoken')->plainTextToken;
+            $token = $user->createToken('authToken')->plainTextToken;
 
             return response()->json([
                 'status' => true,
