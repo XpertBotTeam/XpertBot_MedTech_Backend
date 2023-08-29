@@ -47,4 +47,9 @@ class User extends Authenticatable
     public function medications(){
         $this->belongsToMany(Medication::class);
     }
+
+    public function patients(){
+        $this->belongsToMany(Medication::class);
+    }
+
 }
