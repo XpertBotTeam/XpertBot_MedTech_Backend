@@ -10,24 +10,24 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-
     public function login(Request $request)
     {
-
         $credentials = $request->only(['email', 'password']);
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            $access_token = $user->createToken('authToken')->plainTextToken;
 
+        $user = User::where('email', $credentials['email'])->first();
+
+        if (Auth::attempt($credentials)) {
+            $token = $user->createToken('authToken')->plainTextToken;
             return response()->json([
                 'success' => true,
-                'token' => $access_token,
-                'message' => 'User logged-in successfully'
+                'message' => 'user logged-in successfully',
+                'token'  => $token
             ]);
         } else {
+
             return response()->json([
                 'success' => false,
-                'message' => 'Wrong username or password'
+                'message' => 'Invalid email or password',
             ]);
         }
     }
@@ -74,5 +74,62 @@ class AuthController extends Controller
                 ]);
             }
         }
+    }
+
+    public function deleteUser($id)
+    {
+
+        $user = User::find($id);
+        if (!$user) {
+            return response()->json('user not found');
+        }
+
+        $user->delete();
+        return response()->json('user deleted successfully');
+    }
+
+
+
+    public function editUser(Request $request, $id)
+    {
+        $user = User::find($id);
+        if (!$user) {
+            return response()->json('user not found');
+        } else {
+            if ($request->confirmpassword == $request->password) {
+
+                $user->password = bcrypt($request->password);
+                $user->save();
+
+                return response()->json([
+                    'status' => true,
+                    'message' => 'edit user completed'
+                ]);
+            } else {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'confirm password error'
+                ]);
+            }
+        }
+    }
+
+
+    public function getUser($id)
+    {
+        $user = User::find($id);
+        if (!$user) {
+            return response()->json('user not found');
+        } else {
+            return response()->json([
+                $user
+            ]);
+        }
+    }
+
+
+    public function logoutUser()
+    {
+        Auth::logout();
     }
 }

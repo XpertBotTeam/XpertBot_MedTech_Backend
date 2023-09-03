@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Patient extends Model
 {
     use HasFactory;
@@ -13,7 +14,7 @@ class Patient extends Model
         $this->belongsToMany(Medication::class);
     }
 
-    public function userss(){
+    public function users(){
         $this->belongsToMany(Medication::class);
     }
 
