@@ -1,84 +1,63 @@
 <?php
-namespace App\Http\Controllers\Api;
 
+namespace App\Http\Controllers\API;
+
+use App\Models\Patient;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-
+use App\Http\Controllers\Controller;
+use App\Http\Requests\MedicineRequest;
 
 class MedicineController extends Controller
 {
-
-    public function addMedicine(Request $request)
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(Request $request)
     {
-
-        $medicine = Medicine::where('name', $request->name)->first();
-        if (is_null($medicine)) {
-
-            $medicine = new Medicine();
-            $medicine->name = $request->name;
-            $medicine->description = $request->description;
-
-            $medicine->save();
-
-            return response()->json([
-                'status' => true,
-                'message' => 'Medicine added successfully',
-            ]);
-        } else {
-            return response()->json([
-                'status' => false,
-                'message' => 'Medicine already existed',
-            ]);
-        }
+        $per_page = $request->get('per_page');
+        $medicines = Medicine::paginate($per_page);
+        return response()->json($medicines);
     }
 
 
 
-    public function deleteMedicine($id)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(MedicineRequest $request)
     {
+        $medicine = medicine::create($request->all());
+        return response()->json($medicine, 201);
+    }
 
-        $medicine = Medicine::find($id);
-        if (!$medicine) {
-            return response()->json('medicine not found');
-        }
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $medicine = Medicine::findOrFail($id);
+        return response()->json($medicine);
+    }
 
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(MedicineRequest $request, string $id)
+    {
+        $medicine = Medicine::findOrFail($id);
+        $medicine->update($request->all());
+        return response()->json($medicine);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $medicine = Medicine::findOrFail($id);
         $medicine->delete();
-        return response()->json('medicine deleted successfully');
-    }
-
-
-
-    public function editMedicine(Request $request, $id)
-    {
-        $medicine = Medicine::find($id);
-        if (!$medicine) {
-            return response()->json([
-                'status' => false,
-                'message' => 'medicine not found'
-            ]);
-        } else {
-            $medicine->name = $request->name;
-            $medicine->description = $request->description;
-            $medicine->save();
-
-            return response()->json([
-                'status' => true,
-                'message' => 'edit medicine completed'
-            ]);
-        }
-    }
-
-    public function getMedicine($id)
-    {
-
-        $medicine = Medicine::find($id);
-        if (!$medicine) {
-            return response()->json('medicine not found');
-        } else {
-            return response()->json([
-                $medicine
-            ]);
-        }
+        return response()->json(null, 204);
     }
 }

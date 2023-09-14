@@ -9,15 +9,22 @@ class Medication extends Model
 {
     use HasFactory;
 
-    public function users(){
+    protected $fillable = ['dose', 'frequency', 'time', 'prescription', 'user-id', 'patient-id', 'medicine-id'];
+
+
+
+    public function users()
+    {
         $this->belongsToMany(User::class);
     }
 
-    public function patients(){
+    public function patients()
+    {
         $this->belongsToMany(Patient::class);
     }
 
-    public function medicines(){
+    public function medicines()
+    {
         $this->belongsToMany(Medicine::class);
     }
 }
