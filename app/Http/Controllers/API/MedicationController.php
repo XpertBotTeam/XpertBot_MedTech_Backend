@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Medication;
 use App\Http\Requests\MedicationRequest;
+use App\Console\Commands\SendMedicationRemindersCommand;
 
 
 class MedicationController extends Controller
@@ -62,4 +63,7 @@ class MedicationController extends Controller
         $medication->delete();
         return response()->json(null, 204);
     }
+
+   
+    
 }

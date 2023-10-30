@@ -10,9 +10,10 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      */
+    
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('send:medication-reminders')->hourly();
     }
 
     /**
@@ -21,7 +22,7 @@ class Kernel extends ConsoleKernel
     protected function commands(): void
     {
         $this->load(__DIR__.'/Commands');
-
+        SendMedicationRemindersCommand::class;
         require base_path('routes/console.php');
     }
 }

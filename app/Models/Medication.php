@@ -9,7 +9,7 @@ class Medication extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['dose', 'frequency', 'time', 'prescription', 'user-id', 'patient-id', 'medicine-id'];
+    protected $fillable = ['dose', 'frequency', 'reminder-time', 'prescription', 'user-id', 'patient-id', 'medicine-id'];
 
 
 

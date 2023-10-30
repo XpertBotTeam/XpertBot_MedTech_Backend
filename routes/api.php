@@ -7,6 +7,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\MedicationController;
 use App\Http\Controllers\API\PatientController;
 use App\Http\Controllers\API\MedicineController;
+use App\Models\Patient;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,10 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::resource('patients', PatientController::class);
 Route::resource('medicines', MedicineController::class);
 Route::resource('medications', MedicationController::class);
+
+
+Route::resource('analyzeImage', PatientController::class);
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

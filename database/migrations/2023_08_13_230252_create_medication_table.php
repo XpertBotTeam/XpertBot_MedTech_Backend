@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('dose');
             $table->string('frequency');
-            $table->time('time');
+            $table->dateTime('reminder-time');
             $table->text('prescription');
             $table->foreignId('user-id')->constraint()->onDelete('cascade');;
             $table->foreignId('patient-id')->constraint()->onDelete('cascade');;

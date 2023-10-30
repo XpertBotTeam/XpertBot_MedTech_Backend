@@ -6,6 +6,7 @@ use App\Models\Patient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PatientRequest;
+use Google\Cloud\Vision\VisionClient;
 
 class PatientController extends Controller
 {
@@ -66,4 +67,24 @@ class PatientController extends Controller
         $patient->delete();
         return response()->json(null,204);
     }
+
+   
+
+public function analyzeImage()
+{
+    // Create a VisionClient
+    $vision = new VisionClient();
+
+    // Load an image (adjust the path accordingly)
+    $image = $vision->image(fopen('.jpg', 'r'));
+
+    // Use the Vision API to detect text in the image
+    $textAnnotations = $vision->textDetection($image)->text();
+
+    // Print the detected text
+    foreach ($textAnnotations as $text) {
+        echo $text->description() . PHP_EOL;
+    }
+}
+
 }

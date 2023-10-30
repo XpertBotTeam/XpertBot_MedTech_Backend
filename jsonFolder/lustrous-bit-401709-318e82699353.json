@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "lustrous-bit-401709",
+  "private_key_id": "318e826993533f35a2d030f7d4401093a91ad10d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCu9iDthW/hMX1X\nWCWRiaKpLu7MBO2VjFbYfRujWgXNUdKix9aEjg97AuZ7AkbaIjLbB2lxnLSK3GA4\nLSsuwIqHp03Bjhw8wRXhSzNbnCCse/ddNad1JQNoxM6bEeIG8Ml+4lh49fWjsmDE\nHBgp6p2b6ItKhayIs9fSJFdPFuODN4NVZUH2SHDWGCqfN9KFzMFayIE09Pf0myxv\n5sPaLHazPSoe7YpeiJzRD9EyZhwKfSaIB9Gs/fYC965qfmlPyaIuVAJ/10OHvqRb\nuhVGcyJFcHnMepgf03vTYCDfgUTxnLvqjJ2zkc7HZpE8mYE0421bP3Y0K56+cZa2\nEy3hfT3tAgMBAAECggEAHVY97TXbranrt3KbUgz/DllFR0ZoRBQ1F7XapYhZwrS+\nmfbiPHXJmLnCxct67+aeGmXiw18gUsxjAeho/jzgvaBLBHJ8v58suQswAGNsgx+C\nOcneW2Eqci3V6uCTwtArKTBw3092sc0eNqPzVUv2w4a5nHRPmth1DtJzJVrUKVMl\nNpqAzcDuqh4/3NGeAX5hZ4VjmGCObc6Kzvr8oI6/kdgVsTBdAm5t6LmQ2uCnuVzu\nC60Pfk4yguTtPw+B4IE4ka1jL1BtMe66coemZ9XfzgclTMYbDvmSqSxHoPF8sxKi\nYQA90DTJcrahRCdAxAgtYdgFanrvuqSKMwUQpitcIQKBgQDsLqAXTAZ7J2awTWdc\nEW4w6J7qTJfm2ml8J9oF8umE9HjsGNYcSJ6zzp2Qlo1BlNtAgru5N4LQkOSnl12w\nGPYDTzVEwsjRJ90Vit1u3CtirJpJneUMx4jKOAgLjNjwcftQ5FIsZ6mSxYjclaCj\nJBU/ZPsmvtJnb5EmvqU7mljVaQKBgQC9pG9/aPcNoSkIkEKANohiCuVgQrmsSr5h\n2tfAo72qMHWPIlkqseq9rORppWL2In85eeontZNa6GhtNgZycMjtDi3XF25GVjEU\n5tnhHB2XTBPSZOCzgV8KKTHn3f0E+edRo+GegPAvt/gfs9e+DN6j4s4lm2fvK429\ne47w98W/5QKBgF2D1JWE36gRoMI706oLqMKqyIlizF52qn+jU9s5JCclmV96MgS+\n6D+vlomyYrnN08ZGPUgH577nL/H/p/Pa3kXPLftM2LCgBRTLiAOmH3ORfgGaCCA4\nPTw8VUsleJwztVuBG9xDK0xW9GrKv/D4j4UrWZoswih8b0+U+t2Pro7JAoGBAKQT\npxw3NrkmHJh6J+9CP1GEV9ynHnoA2SNU8qKLiMe80ZmbgEY+VPjyo1T8cNjAFA8o\nef0NToay2dbTjVRqXI0tXV/ht9lHLYQGD7CCYN/MRMId4YOthQsHhVQ1bnpltUuf\nXM+Eg0rmAtl7Akg+XkqxKubCxHPb3PB5/Lxjw0Y5AoGADNuoy+BAoHYC16UgBr8A\n7YfOzzjjiJxehq806jo5xfI1Sd4/OSZZA4vJhcbsmdi6MRQq6WvHTl4Nzuhuy0cS\nQcqZjt55AbUIXCnBMBb0JqiC4FkvHWUOmxXE22STD5reJRbD95+x2D4w0A+EWptP\naB1y2GB1aPo0eA0oMAzIjPI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ocr-prescription-scanning@lustrous-bit-401709.iam.gserviceaccount.com",
+  "client_id": "111296904511484639559",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ocr-prescription-scanning%40lustrous-bit-401709.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
